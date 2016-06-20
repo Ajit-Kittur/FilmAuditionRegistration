@@ -1,12 +1,26 @@
 package com.actingregistration.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class Actor {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="actorId")
 	private int actorId;
 	private String firstName;
 	private String lastName;
+	@Column(unique=true)
 	private String emailId;
 	private int pincode;
+	@Column(unique=true)
 	private long contactNo;
 	private String actorDescription;
 
