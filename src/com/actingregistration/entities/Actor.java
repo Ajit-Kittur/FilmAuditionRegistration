@@ -23,7 +23,9 @@ public class Actor {
 	@Column(unique=true)
 	private long contactNo;
 	private String actorDescription;
-
+	private boolean loginStatus;
+	private String password;
+	
 	public Actor() {
 		super();
 	}
@@ -37,7 +39,40 @@ public class Actor {
 		this.pincode = pincode;
 		this.contactNo = contactNo;
 		this.actorDescription = actorDescription;
+		this.loginStatus=false;
 	}
+	
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	
+	public Actor(String firstName, String lastName, String emailId, int pincode, long contactNo,
+			String actorDescription, boolean loginStatus, String password) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.emailId = emailId;
+		this.pincode = pincode;
+		this.contactNo = contactNo;
+		this.actorDescription = actorDescription;
+		this.loginStatus = loginStatus;
+		this.password = password;
+	}
+
+	public boolean isLoginStatus() {
+		return loginStatus;
+	}
+
+	public void setLoginStatus(boolean loginStatus) {
+		this.loginStatus = loginStatus;
+	}
+
 	public int getActorId() {
 		return actorId;
 	}
