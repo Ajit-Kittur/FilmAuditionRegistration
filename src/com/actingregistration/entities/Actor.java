@@ -1,15 +1,31 @@
 package com.actingregistration.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class Actor {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="actorId")
 	private int actorId;
 	private String firstName;
 	private String lastName;
+	@Column(unique=true)
 	private String emailId;
 	private int pincode;
+	@Column(unique=true)
 	private long contactNo;
 	private String actorDescription;
-
+	private boolean loginStatus;
+	private String password;
+	
 	public Actor() {
 		super();
 	}
@@ -23,7 +39,40 @@ public class Actor {
 		this.pincode = pincode;
 		this.contactNo = contactNo;
 		this.actorDescription = actorDescription;
+		this.loginStatus=false;
 	}
+	
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	
+	public Actor(String firstName, String lastName, String emailId, int pincode, long contactNo,
+			String actorDescription, boolean loginStatus, String password) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.emailId = emailId;
+		this.pincode = pincode;
+		this.contactNo = contactNo;
+		this.actorDescription = actorDescription;
+		this.loginStatus = loginStatus;
+		this.password = password;
+	}
+
+	public boolean isLoginStatus() {
+		return loginStatus;
+	}
+
+	public void setLoginStatus(boolean loginStatus) {
+		this.loginStatus = loginStatus;
+	}
+
 	public int getActorId() {
 		return actorId;
 	}
