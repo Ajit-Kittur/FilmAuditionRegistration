@@ -13,7 +13,7 @@
 
 <style>
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
-	width: 100%;
+	width: 90%;
 	margin: auto;
 	height: 220px;
 }
@@ -44,10 +44,6 @@ footer {
 	width: 300px; // or you could use percentage value for responsive layout
 	height : 500px;
 	overflow: auto;
-}
-#lable1{
-	float: right;
-
 }
 </style>
 </head>
@@ -124,17 +120,17 @@ footer {
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-			<a class="navbar-brand" href="#">WebSiteName</a>
+			<a class="navbar-brand" class="active" href="#">WebSiteName</a>
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
 					data-target="#myNavbar"></button>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#" onclick="loadVideo()">Home</a></li>
+				<li><a href="#" onclick="loadHomePage()">Home</a></li>
 				<li><a href="#portfolio" onclick="loadPortfolioPage()">portfolio</a></li>
 				<li><a href="#About Us">About Us</a></li>
 				<li><a href="#Contact Us">Contact Us</a></li>
-				<li><a href="#" onclick="loadRegistrationForm()">Registration</a></li>
+				<li><a href="#Registration" onclick="loadRegistrationForm()">Registration</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 
@@ -151,14 +147,15 @@ footer {
 		</div></div>
 	</nav>
 	<!-- ----------------- -->
+	<br>
+	<div id="loginmodalIndex"></div>
+	<div id="signupmodalIndex"></div>
+	<div id="liveAuditionIndex"></div>	
 
-	<div class="container-fluid text-center">
+	<div class="container-fluid">
 		<div class="col-sm-9 text-left">
-
-			<div id="tablist"></div>
-		
-		</div>
-
+		<div id="tablist">
+		</div></div>
 		<div class="col-sm-3 sidenav">
 			<div class="well">
 				<img alt="" src="images/Ads.jpg"><a href="#"></a>
@@ -168,14 +165,6 @@ footer {
 			</div>
 		</div>
 	</div>
-
-
-<br>
-	<div id="loginmodalIndex"></div>
-	<div id="signupmodalIndex"></div>
-	<div id="liveAuditionIndex"></div>	
-	
-	
 	<footer id="footerWrapper">
 		<section id="mainFooter">
 			<div class="container">
@@ -249,14 +238,12 @@ footer {
 <!-- ---------------------Script------------------------------ -->
 <script>
 	$(document).ready(function() {
-		$("#tablist").load("html/video.html");
-		
+
 		$("#loginmodalIndex").load("loginmodal.html");
 		$("#signupmodalIndex").load("signupmodal.html");
+		$("#liveAuditionIndex").load("liveAudition.html");
 		$("#tablist").load("html/registrationForm.html");
-		$("#tablist").load("html/portfolio.html");
-		
-		
+		$("#tablist").load("html/homepage.html");
 	});
 </script>
 
