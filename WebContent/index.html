@@ -13,7 +13,7 @@
 
 <style>
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
-	width: 90%;
+	width: 100%;
 	margin: auto;
 	height: 220px;
 }
@@ -44,6 +44,10 @@ footer {
 	width: 300px; // or you could use percentage value for responsive layout
 	height : 500px;
 	overflow: auto;
+}
+#lable1{
+	float: right;
+
 }
 </style>
 </head>
@@ -120,14 +124,17 @@ footer {
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">WebSiteName</a>
+			<a class="navbar-brand" href="#">WebSiteName</a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar"></button>
 			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
+				<li class="active"><a href="#" onclick="loadVideo()">Home</a></li>
 				<li><a href="#portfolio" onclick="loadPortfolioPage()">portfolio</a></li>
-				<li><a href="#">About Us</a></li>
-				<li><a href="#">Contact Us</a></li>
-				<li><a href="#">Registration</a></li>
+				<li><a href="#About Us">About Us</a></li>
+				<li><a href="#Contact Us">Contact Us</a></li>
+				<li><a href="#" onclick="loadRegistrationForm()">Registration</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 
@@ -141,48 +148,14 @@ footer {
 						class="glyphicon glyphicon-user"></span><label id="userlabel">Welcome,
 							User</label></a></li>
 			</ul>
-		</div>
+		</div></div>
 	</nav>
 	<!-- ----------------- -->
 
 	<div class="container-fluid text-center">
 		<div class="col-sm-9 text-left">
-			<h1>Video Gallery</h1>	
-		<div class="col-xs-4">
-			
-				<a class="thumbnail" href="videos/movie.mp4"><img
-class="group1" src="images/img_chania.jpg" title="Image Title" /><label id="video1">The solo dance..</label></a>
-				</div>
-		
-		<div class="col-xs-4">
-			
-				<a class="thumbnail" href="videos/movie.mp4"><img
-class="group1" src="images/img_chania.jpg" title="Image Title" /><label id="video1">The solo dance..</label></a>
-				</div>
-				
-				<div class="col-xs-4">
-			
-				<a class="thumbnail" href="videos/movie.mp4"><img
-class="group1" src="images/img_chania.jpg" title="Image Title" /><label id="video1">The solo dance the solo the dance dance dance </label></a>
-				</div>
-				
-				<div class="col-xs-4">
-			
-				<a class="thumbnail" href="videos/movie.mp4"><img
-class="group1" src="images/img_chania.jpg" title="Image Title" /><label id="video1">The solo dance..</label></a>
-				</div>
-				
-				<div class="col-xs-4">
-			
-				<a class="thumbnail" href="videos/movie.mp4"><img
-class="group1" src="images/img_chania.jpg" title="Image Title" /><label id="video1">The solo dance..</label></a>
-				</div>
-				
-				<div class="col-xs-4">
-			
-				<a class="thumbnail" href="videos/movie.mp4"><img
-class="group1" src="images/img_chania.jpg" title="Image Title" /><label id="video1">The solo dance..</label></a>
-				</div>
+
+			<div id="tablist"></div>
 		
 		</div>
 
@@ -197,6 +170,12 @@ class="group1" src="images/img_chania.jpg" title="Image Title" /><label id="vide
 	</div>
 
 
+<br>
+	<div id="loginmodalIndex"></div>
+	<div id="signupmodalIndex"></div>
+	<div id="liveAuditionIndex"></div>	
+	
+	
 	<footer id="footerWrapper">
 		<section id="mainFooter">
 			<div class="container">
@@ -263,22 +242,25 @@ class="group1" src="images/img_chania.jpg" title="Image Title" /><label id="vide
 			</div>
 		</section>
 	</footer>
-	<div id="loginmodalIndex"></div>
-	<div id="signupmodalIndex"></div>
-	<div id="liveAuditionIndex"></div>
+
+
 </body>
 
 <!-- ---------------------Script------------------------------ -->
 <script>
 	$(document).ready(function() {
+		$("#tablist").load("html/video.html");
+		
 		$("#loginmodalIndex").load("loginmodal.html");
-
 		$("#signupmodalIndex").load("signupmodal.html");
-
-		$("#liveAuditionIndex").load("liveAudition.html");
+		$("#tablist").load("html/registrationForm.html");
+		$("#tablist").load("html/portfolio.html");
+		
+		
 	});
 </script>
 
 <script src="js/logincontroller.js"></script>
 <script src="js/signupcontroller.js"></script>
+<script src="js/tab.js"></script>
 </html>
