@@ -43,6 +43,16 @@ public class Actor {
 	}
 	
 
+	public Actor(String firstName, String lastName, String emailId, String password, long contactNo) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.emailId = emailId;
+		this.password = password;
+		this.contactNo = contactNo;
+		this.loginStatus = false;
+	}
+
 	public String getPassword() {
 		return password;
 	}

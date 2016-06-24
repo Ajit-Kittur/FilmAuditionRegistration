@@ -20,31 +20,37 @@ function liveAudition(){
 
 function loginUser(){
 	
-	var usrname = $("#usrname").val();
-	var psw = $("#psw").val();
-	
-	if(validateUser(usrname, psw)){
-		$("#myModal").modal("hide");
-		$("#logindiv").hide();
-		$("#userdiv").show();
-		$("#userlabel").text("Welcome, " + usrname);
-		
-		userLoggedInFlag = true;
-	}else{
-		$("#errordetails").text("Not a Valid User, please enter proper username and password !!!");
-	}
+        alert($('#login_form').serialize());
+    	$.ajax({
+        	url: "actorservlet?action=login",
+        	method: "POST",
+        	data:  $('#login_form').serialize(),
+        	dataType: 'JSON',
+            success: function(data) {
+            	if(data != null){
+            		sessionStorage.setItem("loginStatus", true);
+            		jQuery.each( data, function( i, field ) {
+            			if(i=="actorId" || i=="loginStatus"){
+            				return true;
+            			}
+            			sessionStorage.setItem(i, field);
+            		 });;
+            		 $("#myModal").modal("hide");
+            		 $("#logindiv").hide();
+            		 $("#userdiv").show();
+            		 $("#userlabel").text("Welcome, " + usrname);
+            	}
+            	else{
+            		alert("Not a valid User");
+            		$("#errordetails").text("Not a Valid User, please enter proper username and password !!!").delay(3000).fadeOut();
+            	}
+            },
+        	error: function(data) {
+        		alert('Not found');
+        		$("#errordetails").text("Not a Valid User, please enter proper username and password !!!").delay(10000).fadeOut();
+            }
+          });
 }
 
-function validateUser(usrnm, psw){
-	
-	for(var userObj in users){
-		if(users[userObj].username == usrnm &&  users[userObj].password == psw){
-			return true;
-			
-			$("#uploaddiv").hide();
-		}
-	}
-	return false;
-}
 
 
