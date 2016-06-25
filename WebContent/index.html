@@ -15,7 +15,7 @@
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
 	width: 90%;
 	margin: auto;
-	height: 220px;
+    height: 150px;
 }
 
 container-fluid text-center {
@@ -45,21 +45,31 @@ footer {
 	height : 500px;
 	overflow: auto;
 }
+
 </style>
 </head>
 <body>
 	<!-- ----Carousel content----------- -->
 	<div class="container-fluid">
 		<br>
+		
+	</div>
+
+	<!-- -----Navigation Function----- -->
+	
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+		
+		
 		<div id="myCarousel" class="carousel slide " data-ride="carousel">
 			<!-- Indicators -->
-			<ol class="carousel-indicators">
+		<!---	<ol class="carousel-indicators">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 				<li data-target="#myCarousel" data-slide-to="1"></li>
 				<li data-target="#myCarousel" data-slide-to="2"></li>
 				<li data-target="#myCarousel" data-slide-to="3"></li>
 			</ol>
-
+-->
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner .slide" role="listbox">
 
@@ -67,9 +77,8 @@ footer {
 					<img src="images/img_chania.jpg" alt="Chania" width="460"
 						height="345">
 					<div class="carousel-caption">
-						<h3>Chania</h3>
-						<p>The atmosphere in Chania has a touch of Florence and
-							Venice.</p>
+						<h3></h3>
+						<p></p>
 					</div>
 				</div>
 
@@ -77,9 +86,8 @@ footer {
 					<img src="images/img_chania2.jpg" alt="Chania" width="460"
 						height="345">
 					<div class="carousel-caption">
-						<h3>Chania</h3>
-						<p>The atmosphere in Chania has a touch of Florence and
-							Venice.</p>
+						<h3></h3>
+						<p></p>
 					</div>
 				</div>
 
@@ -87,8 +95,8 @@ footer {
 					<img src="images/img_flower.jpg" alt="Flower" width="460"
 						height="345">
 					<div class="carousel-caption">
-						<h3>Flowers</h3>
-						<p>Beatiful flowers in Kolymbari, Crete.</p>
+						<h3></h3>
+						<p></p>
 					</div>
 				</div>
 
@@ -96,8 +104,8 @@ footer {
 					<img src="images/img_flower2.jpg" alt="Flower" width="460"
 						height="345">
 					<div class="carousel-caption">
-						<h3>Flowers</h3>
-						<p>Beatiful flowers in Kolymbari, Crete.</p>
+						<h3></h3>
+						<p></p>
 					</div>
 				</div>
 
@@ -106,37 +114,32 @@ footer {
 			<!-- Left and right controls -->
 			<a class="left carousel-control" href="#myCarousel" role="button"
 				data-slide="prev"> <span
-				class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				class="" aria-hidden="true"></span>
 				<span class="sr-only">Previous</span>
 			</a> <a class="right carousel-control" href="#myCarousel" role="button"
 				data-slide="next"> <span
-				class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				class="" aria-hidden="true"></span>
 				<span class="sr-only">Next</span>
 			</a>
 		</div>
-	</div>
-
-	<!-- -----Navigation Function----- -->
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
+		
+		
 			<div class="navbar-header">
-			<a class="navbar-brand" class="active" href="#">WebSiteName</a>
+			<a class="navbar-brand" class="active" href="#"><img src="images/logoaudi.jpg" width="120px" height="30px"/></a>
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
 					data-target="#myNavbar"></button>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-				<li><a href="#" onclick="loadHomePage()">Home</a></li>
-				<li><a href="#portfolio" onclick="loadPortfolioPage()">portfolio</a></li>
-				<li><a href="#About Us">About Us</a></li>
-				<li><a href="#Contact Us">Contact Us</a></li>
-				<li><a href="#Registration" onclick="loadRegistrationForm()">Registration</a></li>
+				<li><a href="#" onclick="loadHomePage()"><label>Home</label></a></li>
+				<li><a href="#" onclick="loadAboutUs()"><label>About Us</label></a></li>
+				<li><a href="#" onclick="loadContactUs()"><label>Contact us</label></a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 
-				<li id="livediv"><a href="#" onclick="liveAudition()"><span
+				<li id="livediv"><a href="#"  onclick="liveAudition()" id="liveAuditionlabel"><span
 						class="glyphicon glyphicon-facetime-video"></span> <label
-						id="liveAuditionlabel">Live Audition</label></a></li>
+						>Audition</label></a></li>
 				<li id="logindiv"><a href="#" onclick="showLoginPopup()"><span
 						class="glyphicon glyphicon-user"></span><label id="loginlabel">Login</label></a></li>
 				<li id="userdiv" style="display: none"><a href="#"
@@ -156,14 +159,7 @@ footer {
 		<div class="col-sm-9 text-left">
 		<div id="tablist">
 		</div></div>
-		<div class="col-sm-3 sidenav">
-			<div class="well">
-				<img alt="" src="images/Ads.jpg"><a href="#"></a>
-			</div>
-			<div class="well">
-				<p>ADS</p>
-			</div>
-		</div>
+		
 	</div>
 	<footer id="footerWrapper">
 		<section id="mainFooter">
@@ -239,6 +235,8 @@ footer {
 <script>
 	$(document).ready(function() {
 
+		$("#liveAuditionlabel").hide();
+		
 		$("#loginmodalIndex").load("loginmodal.html");
 		$("#signupmodalIndex").load("signupmodal.html");
 		$("#liveAuditionIndex").load("liveAudition.html");

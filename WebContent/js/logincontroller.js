@@ -7,13 +7,18 @@ function showLoginPopup() {
 function showSignUpModal(){
 	
 	$("#myModal").modal("hide");
-	
+	$("#myModal").on('hidden.bs.modal', function (event) {
+		  if ($('.modal:visible').length) //check if any modal is open
+		  {
+		    $('body').addClass('modal-open');//add class to body
+		  }
+		});
+
 	$("#signupmodal").modal("show");
-	
+
 }
 
 function liveAudition(){
-	
 	$("#myModal1").modal("show");
 	
 }

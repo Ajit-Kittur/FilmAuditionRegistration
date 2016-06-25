@@ -1,11 +1,11 @@
 
-function loadPortfolioPage(){
+function loadAboutUs(){
 	
 	
 	$("#tablist").load("html/portfolio.html");
 }
 
-function loadRegistrationForm(){
+function loadContactUs(){
 	 $("#tablist").load("html/registrationForm.html");
 }
 
