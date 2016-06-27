@@ -11,9 +11,19 @@
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.1/holder.min.js"></script>
+
 <style>
+   .item.active,
+        .item.active + .item,
+        .item.active + .item  + .item {
+           width: 33.3%;
+           display: block;
+           float:left;
+        } 
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
-	width: 90%;
+	width: 100%;
 	margin: auto;
     height: 150px;
 }
@@ -68,53 +78,36 @@ footer {
 		
 		<div id="myCarousel" class="carousel slide " data-ride="carousel">
 			<!-- Indicators -->
-		<!---	<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
-				<li data-target="#myCarousel" data-slide-to="3"></li>
-			</ol>
--->
+		<ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
 			<!-- Wrapper for slides -->
-			<div class="carousel-inner .slide" role="listbox">
-
-				<div class="item active">
-					<img src="images/img_chania.jpg" alt="Chania" width="460"
-						height="345">
-					<div class="carousel-caption">
-						<h3></h3>
-						<p></p>
-					</div>
-				</div>
-
-				<div class="item">
-					<img src="images/img_chania2.jpg" alt="Chania" width="460"
-						height="345">
-					<div class="carousel-caption">
-						<h3></h3>
-						<p></p>
-					</div>
-				</div>
-
-				<div class="item">
-					<img src="images/img_flower.jpg" alt="Flower" width="460"
-						height="345">
-					<div class="carousel-caption">
-						<h3></h3>
-						<p></p>
-					</div>
-				</div>
-
-				<div class="item">
-					<img src="images/img_flower2.jpg" alt="Flower" width="460"
-						height="345">
-					<div class="carousel-caption">
-						<h3></h3>
-						<p></p>
-					</div>
-				</div>
-
-			</div>
+			 <div class="carousel-inner" role="listbox">
+    <div class="item active">
+        <img src="images/dance1.jpg" height="30" width="20">
+    </div>
+    <div class="item">
+        <img src="images/dance4.jpg" height="50" width="20">
+    </div>
+    <div class="item">
+        <img data-src="holder.js/300x200?text=3">
+    </div>
+    <div class="item">
+        <img data-src="holder.js/300x200?text=4">
+    </div>
+    <div class="item">
+        <img data-src="holder.js/300x200?text=5">
+    </div>
+    <div class="item">
+        <img data-src="holder.js/300x200?text=6">
+    </div>
+    <div class="item">
+        <img data-src="holder.js/300x200?text=7">
+    </div>    
+  </div>
 
 			<!-- Left and right controls -->
 			<a class="left carousel-control" href="#myCarousel" role="button"
