@@ -20,7 +20,10 @@ function showSignUpModal(){
 
 function liveAudition(){
 	$("#myModal1").modal("show");
-	
+	$('#myModal1').modal({
+	    backdrop: 'static',
+	    keyboard: false
+	})
 }
 
 function loginUser(){
