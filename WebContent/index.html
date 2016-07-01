@@ -14,6 +14,8 @@
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.1/holder.min.js"></script>
 
+
+
 <style>
    .item.active,
         .item.active + .item,
@@ -43,7 +45,13 @@ container-fluid text-center {
 footer {
 	background-color: #000;
 	color: white;
-	padding: 15px;
+	padding: 10px;
+	position:fixed;
+   left:0px;
+   bottom:0px;
+   height:50px;
+   width:100%;
+ 
 }
 
 .thumb {
@@ -62,7 +70,29 @@ background-color: #000;
     #godown{
    height: 70px;
 }
+.footer {
+    background: #061D25;
+    padding: 10px 0;
+}
 
+.footer a {
+    color: #70726F;
+    font-size: 20px;
+    padding: 10px;
+    border-right: 1px solid #70726F;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.footer a:first-child {
+    border-left: 1px solid #70726F;
+}
+
+.footer a:hover {
+    color: white;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
 </style>
 </head>
 <body>
@@ -162,72 +192,13 @@ background-color: #000;
 		</div></div>
 		
 	</div>
-	<footer id="footerWrapper">
-		<section id="mainFooter">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="footerWidget">
-							<img src="" alt="latest Little Neko news"
-								id="footerLogo">
-							<p>
-								<a href="http://www.little-neko.com"
-									title="Little Neko, website template creation">Little Neko</a>
-								is a web design and development studio. We build responsive
-								HTML5 and CSS3 templates, integrating best web design practices
-								and up-to-date web technologies to create great user
-								experiences. We love what we do and we hope you do too!
-							</p>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="footerWidget">
-
-							<h3>Little NEKO</h3>
-							<address>
-								<p>
-									<i class="icon-location"></i>&nbsp;77 Mass. Ave., E14/E15<br>
-									Seattle, MA 02139-4307 USA <br> <i class="icon-phone"></i>&nbsp;615.987.1234
-									<br> <i class="icon-mail-alt"></i>&nbsp;<a
-										href="#">little@little-neko.com</a>
-								</p>
-							</address>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="footerWidget">
-							<h3>Follow us, we are social</h3>
-							<ul class="socialNetwork">
-								<li><a href="#" class="tips" title="follow me on Facebook"><i
-										class="icon-facebook-1 iconRounded"></i></a></li>
-								<li><a href="#" class="tips" title="follow me on Twitter"><i
-										class="icon-twitter-bird iconRounded"></i></a></li>
-								<li><a href="#" class="tips" title="follow me on Google+"><i
-										class="icon-gplus-1 iconRounded"></i></a></li>
-								<li><a href="#" class="tips" title="follow me on Linkedin"><i
-										class="icon-linkedin-1 iconRounded"></i></a></li>
-								<li><a href="#" class="tips" title="follow me on Dribble"><i
-										class="icon-dribbble iconRounded"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section id="footerRights">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<p>
-							Copyright © 2014 <a href="http://www.little-neko.com"
-								target="blank">Little NEKO</a> / All rights reserved.
-						</p>
-					</div>
-
-				</div>
-			</div>
-		</section>
-	</footer>
+	<footer class="footer">
+        <div class="container text-center">
+           <i class="fa fa-facebook-f"></i>
+<i class="fa fa-facebook-f" style="font-size:24px"></i>
+<i class="fa fa-facebook-f" style="font-size:36px"></i>
+        </div><!--End container-->
+    </footer><!--End footer 2-->
 
 
 </body>
