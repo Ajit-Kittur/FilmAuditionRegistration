@@ -136,19 +136,14 @@ container-fluid text-center {
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
-						<li><a href="#" onclick="loadHomePage()"><label>Home</label></a></li>
-						<li><a href="#" onclick="loadAboutUs()"><label>About
-									Us</label></a></li>
-						<li><a href="#" onclick="loadContactUs()"><label>Contact
-									us</label></a></li>
+						<li id="homepage" style="display: none;"><a href="#" onclick="loadHomePage()"><label>Home</label></a></li>
+						<li><a href="#" onclick="loadUsersListPage()"><label>
+									User</label></a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 
-						<li id="livediv"><a href="#" onclick="liveAudition()"
-							id="liveAuditionlabel"><span
-								class="glyphicon glyphicon-facetime-video"></span> <label>Audition</label></a></li>
-						<li id="logindiv"><a href="#" onclick="showLoginPopup()"><span
-								class="glyphicon glyphicon-user"></span><label id="loginlabel">Login</label></a></li>
+						<li id="adminlogindiv"><a href="#" onclick="showAdminLoginPopup()"><span
+								class="glyphicon glyphicon-user"></span><label id="loginlabel">Admin Login</label></a></li>
 						<li id="userdiv" style="display: none"><a href="#"
 							onclick="showLoginPopup()"><span
 								class="glyphicon glyphicon-user"></span><label id="userlabel">Welcome,
@@ -160,13 +155,11 @@ container-fluid text-center {
 	</div>
 	<!-- ----------------- -->
 	<br>
-	<div id="loginmodalIndex"></div>
-	<div id="signupmodalIndex"></div>
-	<div id="liveAuditionIndex"></div>
+	<div id="adminloginmodalIndex"></div>
 
 	<div class="container-fluid">
 		<div class="col-sm-9 text-left">
-			<div id="tablist"></div>
+			<div id="admintablist"></div>
 		</div>
 
 	</div>
@@ -181,19 +174,11 @@ container-fluid text-center {
 <!-- ---------------------Script------------------------------ -->
 <script>
 	$(document).ready(function() {
-
-		//	$("#liveAuditionlabel").hide()
-
-		$("#loginmodalIndex").load("loginmodal.html");
-		$("#signupmodalIndex").load("signupmodal.html");
-		$("#liveAuditionIndex").load("liveAudition.html");
-		$("#tablist").load("html/registrationForm.html");
-		$("#tablist").load("html/homepage.html");
-
+			$("#adminloginmodalIndex").load("adminLoginModal.html");
+			$("#admintablist").load("html/userList.html");
 	});
 </script>
 
-<script src="js/logincontroller.js"></script>
-<script src="js/signupcontroller.js"></script>
-<script src="js/tab.js"></script>
+<script src="js/adminlogincontroller.js"></script>
+<script src="js/admintab.js"></script>
 </html>
