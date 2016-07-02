@@ -59,7 +59,7 @@ public class ActorDaoImpl implements ActorDao{
 		Entity entityAnno=Actor.class.getAnnotation(Entity.class);
 		System.out.println(entityAnno.name());
 		EntityManager entitymanager=entityManagerFactory.createEntityManager();
-		Query query=entitymanager.createQuery("Select u.loginStatus from Actor u where u.psd=:password and u.emailId=:emailId");
+		Query query=entitymanager.createQuery("Select u.loginStatus from Actor u where u.password=:password and u.emailId=:emailId");
 		query.setParameter("password", password);
 		query.setParameter("emailId", emailId);
 		return (boolean) query.getSingleResult();
