@@ -46,7 +46,7 @@ function loginUser(){
             		 $("#myModal").modal("hide");
             		 $("#logindiv").hide();
             		 $("#userdiv").show();
-            		 $("#userlabel").text("Welcome, " + usrname);
+            		 $("#userlabel").text("Welcome, " + sessionStorage.getItem("firstName"));
             	}
             	else{
             		alert("Not a valid User");
