@@ -26,8 +26,8 @@ function liveAudition(){
 	})
 }
 
-function loginUser(){
-	
+function loginUser(event){
+		
         alert($('#login_form').serialize());
     	$.ajax({
         	url: "actorservlet?action=login",
@@ -49,15 +49,14 @@ function loginUser(){
             		 $("#userlabel").text("Welcome, " + sessionStorage.getItem("firstName"));
             	}
             	else{
-            		alert("Not a valid User");
             		$("#errordetails").text("Not a Valid User, please enter proper username and password !!!").delay(3000).fadeOut();
             	}
             },
         	error: function(data) {
-        		alert('Not found');
         		$("#errordetails").text("Not a Valid User, please enter proper username and password !!!").delay(10000).fadeOut();
             }
           });
+    	event.preventDefault();
 }
 
 
