@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet"/>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script
@@ -44,15 +45,28 @@ container-fluid text-center {
 
 /* Set black background color, white text and some padding */
 .footer {
-	background-color: #000;
-	padding: 10px 0;
-	position: fixed;
-	left: 0px;
-	bottom: 0px;
-	height: 50px;
-	width: 100%;
+    background: #000;
+    padding: 10px 0;
 }
 
+.footer a {
+    color: #70726F;
+    font-size: 20px;
+    padding: 10px;
+    border-right: 1px solid #70726F;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.footer a:first-child {
+    border-left: 1px solid #70726F;
+}
+
+.footer a:hover {
+    color: white;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
 .thumb {
 	margin-bottom: 30px;
 }
@@ -170,9 +184,13 @@ container-fluid text-center {
 		</div>
 
 	</div>
-	<footer class="footer">
-		
-	</footer>
+<footer class="footer">
+    <div class="container text-right">
+	<div class="copyright"></div>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+    </div><!--End container-->
+</footer><!--End footer 2-->
 
 
 

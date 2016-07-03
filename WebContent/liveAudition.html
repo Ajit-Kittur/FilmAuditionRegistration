@@ -50,6 +50,14 @@
   <input type="file" id="uploadFile" />
 </span>
 </div>
+
+<div class="form-group">
+<label class="control-label col-sm-2" for="photo">Select Video:</label>
+<span class="fileUpload btn btn-primary">
+
+  <input type="file" id="uploadFile" />
+</span>
+</div>
 			</form>
 	</div>
         </div>
@@ -63,15 +71,25 @@
    </div>
 
  <div class="modal-footer">
-          <button type="reset" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-          <p>Not a member? <a id="signupdiv" class="display-none" href="#" onclick="showSignUpModal()">Sign Up</a></p>
-          <p>Forgot <a href="#">Password?</a></p>
+ 		<button type="reset" class="btn btn-danger btn-default pull-left" data-toggle="modal"><span class=""></span> Cancel</button>
+          <button type="submit" class="btn next-tab btn-primary btn-default pull-center" data-toggle="tab2" ><span class=""></span> Save and Next</button>
         </div>
 
 		</div>
 	</div>
 </div>
 
+<script>
 
+$('.next-tab').click(function(e){
+	  if($('#tabs > .active').next('li').hasClass('next-tab')){
+	    $('#tabs > li').first('li').find('a').trigger('click');
+	  }else{
+	  	$('.nav-tabs > .active').next('li').find('a').trigger('click');
+	  }
+	  e.preventDefault();
+	});
+
+</script>
 
 
