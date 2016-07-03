@@ -14,7 +14,7 @@ function hideSignUpModal(){
 	
 }
 
-function signUpUser(){
+function signUpUser(event){
     if($("#sign_psw").val()==$("#sign_conf_psw").val()){
     	$.ajax({
             url: "actorservlet?action=register",
@@ -44,5 +44,5 @@ function signUpUser(){
     	alert('not correct')
     	$("#errordetails_signup").text("Password and confirm password fields are different...!").delay(3000).fadeOut();
     }   
-	
+    event.preventDefault();
 }
