@@ -46,7 +46,16 @@ container-fluid text-center {
 /* Set black background color, white text and some padding */
 .footer {
     background: #000;
+    bottom: 0;
+    height:50px;
     padding: 10px 0;
+    position: fixed;
+}
+footer {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer a {
@@ -81,6 +90,11 @@ container-fluid text-center {
 
 #godown {
 	height: 70px;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
 }
 
 
@@ -177,6 +191,7 @@ container-fluid text-center {
 	<div id="loginmodalIndex"></div>
 	<div id="signupmodalIndex"></div>
 	<div id="liveAuditionIndex"></div>
+	<div id="forgotpasswordIndex"></div>
 
 	<div class="container-fluid">
 		<div class="col-sm-9 text-left">
@@ -184,13 +199,21 @@ container-fluid text-center {
 		</div>
 
 	</div>
-<footer class="footer">
-    <div class="container text-right">
-	<div class="copyright"></div>
+<footer class="footer fixed-bottom">
+
+<span class="col-md-4 col-sm-4 col-xs-11"><label>Copyright ©  2016. - All rights reserved</label></span>
+
+<span class="col-md-4 col-sm-4 col-xs-11 text-center"><label>Contact Us:99999-99999,99999-99999</label></span>
+    
+    
+   <div class="container text-right col-md-4 col-sm-8 col-xs-11">
+       <span><label>Share at</label> 
         <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-whatsapp"></i></a></span>
     </div><!--End container-->
 </footer><!--End footer 2-->
+
+
 
 
 
@@ -207,7 +230,7 @@ container-fluid text-center {
 		$("#liveAuditionIndex").load("liveAudition.html");
 		$("#tablist").load("html/registrationForm.html");
 		$("#tablist").load("html/homepage.html");
-
+		$("#forgotpasswordIndex").load("forgotPasswordModal.html");
 	});
 </script>
 

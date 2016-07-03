@@ -59,5 +59,13 @@ function loginUser(event){
     	event.preventDefault();
 }
 
+function showForgorPasswordModal(){
+	$("#myModal").modal("hide");
+	$("#myModal4").modal("show")
+	
+}
 
-
+function loadforgotpassword(){
+	
+	alert("Change the Password");
+}
