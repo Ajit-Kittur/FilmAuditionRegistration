@@ -61,11 +61,19 @@ function loginUser(event){
 
 function showForgorPasswordModal(){
 	$("#myModal").modal("hide");
+	
+	$("#myModal").on('hidden.bs.modal', function (event) {
+		  if ($('.modal:visible').length) //check if any modal is open
+		  {
+		    $('body').addClass('modal-open');//add class to body
+		  }
+		});
 	$("#myModal4").modal("show")
 	
 }
 
 function loadforgotpassword(){
+
 	
 	alert($('#login_forgot').serialize());
 	$.ajax({
@@ -93,4 +101,5 @@ function loadforgotpassword(){
         }
       });
 	event.preventDefault();
+
 }
