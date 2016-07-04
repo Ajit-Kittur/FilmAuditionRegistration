@@ -11,5 +11,6 @@ public interface ActorDao {
 	public Actor getActor(String emailId, String password) throws ClassNotFoundException, SQLException;
 	public boolean updateActor(Actor actor);
 	public Actor getActorByemailId(String emailId) throws ClassNotFoundException, SQLException;
-	boolean forLoginCheck(String emailId, String password) throws ClassNotFoundException, SQLException;
+	public boolean forLoginCheck(String emailId, String password) throws ClassNotFoundException, SQLException;
+	public boolean forgotPassword(String emailId, Long contactNo);
 }

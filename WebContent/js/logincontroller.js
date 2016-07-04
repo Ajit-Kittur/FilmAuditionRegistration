@@ -67,5 +67,30 @@ function showForgorPasswordModal(){
 
 function loadforgotpassword(){
 	
-	alert("Change the Password");
+	alert($('#login_forgot').serialize());
+	$.ajax({
+    	url: "actorservlet?action=loginforgot",
+    	method: "POST",
+    	data:  $('#login_forgot').serialize(),
+    	dataType: 'JSON',
+        success: function(data) {
+        	if(data.check){
+          		$("#myModal4").modal("hide");
+           		$("#myModal4").on('hidden.bs.modal', function (event) {
+           			if ($('.modal:visible').length) //check if any modal is open
+           			{
+           				$('body').addClass('modal-open');//add class to body
+           			}
+           		});
+            }
+            else{
+            		alert('This email id is already registered')
+            		$("#errordetails_signup").text("This email id or contact number is not registered").delay(3000).fadeOut();
+            }
+        },
+    	error: function(data) {
+    		$("#errordetails").text("Not a Valid User, please enter proper username and password !!!").delay(10000).fadeOut();
+        }
+      });
+	event.preventDefault();
 }

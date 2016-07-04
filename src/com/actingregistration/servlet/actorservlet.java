@@ -72,6 +72,19 @@ public class actorservlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
+		else if(action.equals("loginforgot")){
+			try {
+				Gson gson=new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
+				Map<String, Boolean> value=new LinkedHashMap<String, Boolean>();
+				value.put("check",actorService.forgotPassword(request.getParameter("emailId"), request.getParameter("password"), Long.parseLong(request.getParameter("contactNo"))));
+				String userJson=gson.toJson(value);
+				System.out.println(userJson);
+				printWriter.write(userJson);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		}
 	}
 
 }
