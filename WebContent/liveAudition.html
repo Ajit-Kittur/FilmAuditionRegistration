@@ -27,7 +27,7 @@
 
 
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="address">Residential	Address:</label>
+		<label class="control-label col-sm-1" for="address">Residential	Address:</label>
 						<div class="col-sm-4">
 							<textarea placeholder="Enter Address Here.." rows="3"
 								maxlength="1000" class="form-control"></textarea>
@@ -36,7 +36,7 @@
 					
 					
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="address">Describe Yourself:</label>
+		<label class="control-label col-sm-1" for="address">Describe Yourself:</label>
 						<div class="col-sm-4">
 							<textarea placeholder="Enter Address Here.." rows="3"
 								maxlength="1000" class="form-control"></textarea>
@@ -44,7 +44,7 @@
 					</div>
 
 <div class="form-group">
-<label class="control-label col-sm-2" for="photo">Select Photo:</label>
+<label class="control-label col-sm-1" for="photo">Select Photo:</label>
 <span class="fileUpload btn btn-primary">
 
   <input type="file" id="uploadFile" />
@@ -52,11 +52,12 @@
 </div>
 
 <div class="form-group">
-<label class="control-label col-sm-2" for="photo">Select Video:</label>
-<span class="fileUpload btn btn-primary">
-
-  <input type="file" id="uploadFile" />
-</span>
+<label class="control-label col-sm-1" for="photo">Enter Video Url:</label>
+<div class="col-sm-4">
+<textarea placeholder="Enter Video Url" rows="1" class="form-control"></textarea>
+</div></div>
+<div class="col-xs-6"><hr>
+<a class="btn btn-success btnNext btn pull-right">Save and Next</a>
 </div>
 			</form>
 	</div>
@@ -65,22 +66,16 @@
   <!-- ------ Second tab content  ------ -->      
         <div class="tab-pane" id="tab2">
         	<p>Data 2.</p>
+        	<hr>
+        	  <a class="btn btn-primary btnPrevious">Previous</a>
+        <a class="btn btn-success btnNext btn pull-right">submit</a>
+        
         </div>
         </div>
         </div>
    </div>
 
- <div class="modal-footer">
- 		<button type="reset" class="btn btn-danger btn-default pull-left" data-toggle="modal"><span class=""></span> Cancel</button>
-          <button id="nxt" type="submit" class="btn next-tab btn-primary btn-default pull-center" data-toggle="tab2" ><span class=""></span> Save and Next</button>
-
-
-
-       <!--  <button id="submit" type="submit" class="btn btn-primary btn-default pull-right">Submit</button>
-        <button id="pre" type="submit" class="btn btn-default pull-center">Previous</button> -->
-
-
-        </div>
+ 
 
 		</div>
 	</div>
@@ -88,15 +83,12 @@
 
 <script>
 
-$('.next-tab').click(function(e){
-	  if($('#tabs > .active').next('li').hasClass('next-tab')){
-	    $('#tabs > li').first('li').find('a').trigger('click');
-	  }else{
-	  	$('.nav-tabs > .active').next('li').find('a').trigger('click');
-	  }
-	  e.preventDefault();
-	  $("#nxt").hide();
- 
+$('.btnNext').click(function(){
+	  $('.nav-tabs > .active').next('li').find('a').trigger('click');
+	});
+
+	  $('.btnPrevious').click(function(){
+	  $('.nav-tabs > .active').prev('li').find('a').trigger('click');
 	});
 
 </script>
