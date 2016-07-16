@@ -26,6 +26,14 @@ function liveAudition(){
 	})
 }
 
+function liveAuditionLive(){
+	$("#myModal5").modal("show");
+	
+}
+
+
+
+
 function loginUser(event){
 		
         alert($('#login_form').serialize());
@@ -46,6 +54,7 @@ function loginUser(event){
             		 $("#myModal").modal("hide");
             		 $("#logindiv").hide();
             		 $("#userdiv").show();
+            		 $("#livediv").show();
             		 $("#userlabel").text("Welcome, " + sessionStorage.getItem("firstName"));
             	}
             	else{
@@ -68,7 +77,7 @@ function showForgorPasswordModal(){
 		    $('body').addClass('modal-open');//add class to body
 		  }
 		});
-	$("#myModal4").modal("show")
+	$("#myModal4").modal("show");
 	
 }
 
@@ -106,5 +115,4 @@ function loadforgotpassword(event){
 		$("#errordetails_signup").text("Password and confirm password fields are different...!").delay(3000).fadeOut();
 	}   
 	event.preventDefault();
-
 }

@@ -171,8 +171,11 @@ body {
 									us</label></a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-
-						<li id="livediv"><a href="#" onclick="liveAudition()"
+					<li id="livedivlive" style=""><a href="#" onclick="liveAuditionLive()"
+							id="liveAuditionlabelout"><span
+								class="glyphicon glyphicon-facetime-video"></span> <label>Live Audition</label></a></li>
+							
+						<li id="livediv" style="display:none"><a href="#" onclick="liveAudition()"
 							id="liveAuditionlabel"><span
 								class="glyphicon glyphicon-facetime-video"></span> <label>Audition</label></a></li>
 						<li id="logindiv"><a href="#" onclick="showLoginPopup()"><span
@@ -192,7 +195,7 @@ body {
 	<div id="signupmodalIndex"></div>
 	<div id="liveAuditionIndex"></div>
 	<div id="forgotpasswordIndex"></div>
-
+	<div id="auditionLiveIndex"></div>
 	<div class="container-fluid">
 		<div class="col-sm-9 text-left">
 			<div id="tablist"></div>
@@ -231,6 +234,7 @@ body {
 		$("#tablist").load("html/registrationForm.html");
 		$("#tablist").load("html/homepage.html");
 		$("#forgotpasswordIndex").load("forgotPasswordModal.html");
+		$("#auditionLiveIndex").load("auditionliveindexModal.html")
 	});
 </script>
 
