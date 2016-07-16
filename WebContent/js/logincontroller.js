@@ -77,10 +77,42 @@ function showForgorPasswordModal(){
 		    $('body').addClass('modal-open');//add class to body
 		  }
 		});
-	$("#myModal4").modal("show")
+	$("#myModal4").modal("show");
 	
 }
 
-function loadforgotpassword(){
-	alert("Change the Password");
+function loadforgotpassword(event){
+
+  if($("#forgotcnf_psw").val()==$("#forgot_psw").val()){
+	alert($('#login_forgot').serialize());
+	$.ajax({
+    	url: "actorservlet?action=loginforgot",
+    	method: "POST",
+    	data:  $('#login_forgot').serialize(),
+    	dataType: 'JSON',
+        success: function(data) {
+        	if(data.check){
+          		$("#myModal4").modal("hide");
+           		$("#myModal4").on('hidden.bs.modal', function (event) {
+           			if ($('.modal:visible').length) //check if any modal is open
+           			{
+           				$('body').addClass('modal-open');//add class to body
+           			}
+           		});
+            }
+            else{
+            		alert('This email id is already registered')
+            		$("#errordetails_signup").text("This email id or contact number is not registered").delay(3000).fadeOut();
+            }
+        },
+    	error: function(data) {
+    		alert(data)
+    		$("#errordetails3").text("Not a Valid User, please enter proper username and password !!!").delay(10000).fadeOut();
+        }
+      });
+	}else{
+		alert('not correct')
+		$("#errordetails_signup").text("Password and confirm password fields are different...!").delay(3000).fadeOut();
+	}   
+	event.preventDefault();
 }

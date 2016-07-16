@@ -24,12 +24,7 @@ function signUpUser(event){
             success: function(data) {
               	if(data.check){
               		$("#signupmodal").modal("hide");
-               		$("#signupmodal").on('hidden.bs.modal', function (event) {
-               			if ($('.modal:visible').length) //check if any modal is open
-               			{
-               				$('body').addClass('modal-open');//add class to body
-               			}
-               		});
+               		$("#myModal").modal("show");
                 }
                 else{
                 		alert('This email id is already registered')

@@ -68,9 +68,8 @@ public class ActorDaoImpl implements ActorDao{
 	@Override
 	public Actor getActor(String emailId, String password) throws ClassNotFoundException, SQLException {
 		EntityManager entitymanager=entityManagerFactory.createEntityManager();
-		Query query=entitymanager.createQuery("Select u from Actor u where u.emailId=:emailId and u.password=:password");
+		Query query=entitymanager.createQuery("Select u from Actor u where u.emailId=:emailId");
 		query.setParameter("emailId", emailId);
-		query.setParameter("password", password);
 		Actor actor;
 		try{
 			actor= (Actor) query.getSingleResult(); 
@@ -113,6 +112,17 @@ public class ActorDaoImpl implements ActorDao{
 			return null;
 		}
 		return actor;
+	}
+
+	@Override
+	public boolean forgotPassword(String emailId, Long contactNo) {
+		Entity entityAnno=Actor.class.getAnnotation(Entity.class);
+		System.out.println(entityAnno.name());
+		EntityManager entitymanager=entityManagerFactory.createEntityManager();
+		Query query=entitymanager.createQuery("Select u.loginStatus from Actor u where u.contactNo=:contactNo and u.emailId=:emailId");
+		query.setParameter("contactNo", contactNo);
+		query.setParameter("emailId", emailId);
+		return (boolean) query.getSingleResult();
 	}
 
 }

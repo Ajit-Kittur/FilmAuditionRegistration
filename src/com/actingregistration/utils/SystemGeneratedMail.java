@@ -32,7 +32,7 @@ public class SystemGeneratedMail {
 			Message message = new MimeMessage(session);
 			message.setFrom(new InternetAddress("testdata821@gmail.com"));
 			message.setRecipients(Message.RecipientType.TO,
-					InternetAddress.parse("ajitrocks.k@gmail.com"));
+					InternetAddress.parse(mailId));
 			message.setSubject("System Generated Mail");
 			message.setText("This is system generated Mail" +
 					"\n\n Please Do not reply");

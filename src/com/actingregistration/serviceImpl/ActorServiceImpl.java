@@ -53,4 +53,17 @@ public class ActorServiceImpl implements ActorService{
 		return null;
 	}
 
+	@Override
+	public Boolean forgotPassword(String emailId, String password, Long contactNo) throws Exception {
+		if(actorDao.forgotPassword(emailId, contactNo)){
+			actor=actorDao.getActorByemailId(emailId);
+			actor.setPassword(EncryptDecryptData.encrypt(password));
+			actorDao.updateActor(actor);
+			return true;
+	}
+		else {
+			return false;
+		}
+	}
+
 }
