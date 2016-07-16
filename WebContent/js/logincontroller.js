@@ -72,9 +72,9 @@ function showForgorPasswordModal(){
 	
 }
 
-function loadforgotpassword(){
+function loadforgotpassword(event){
 
-	
+  if($("#forgotcnf_psw").val()==$("#forgot_psw").val()){
 	alert($('#login_forgot').serialize());
 	$.ajax({
     	url: "actorservlet?action=loginforgot",
@@ -97,9 +97,14 @@ function loadforgotpassword(){
             }
         },
     	error: function(data) {
-    		$("#errordetails").text("Not a Valid User, please enter proper username and password !!!").delay(10000).fadeOut();
+    		alert(data)
+    		$("#errordetails3").text("Not a Valid User, please enter proper username and password !!!").delay(10000).fadeOut();
         }
       });
+	}else{
+		alert('not correct')
+		$("#errordetails_signup").text("Password and confirm password fields are different...!").delay(3000).fadeOut();
+	}   
 	event.preventDefault();
 
 }
