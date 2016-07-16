@@ -18,13 +18,13 @@ function showSignUpModal(){
 		  }
 		});
 
-	$("#myModal6").modal("show");
+	$("#myModalAdminSignUp").modal("show");
 	
 }
 
 function hideAdminSignUpModal(){
-	$("#myModal6").modal("hide");
-	$("#myModal6").on('hidden.bs.modal', function (event) {
+	$("#myModalAdminSignUp").modal("hide");
+	$("#myModalAdminSignUp").on('hidden.bs.modal', function (event) {
 		  if ($('.modal:visible').length) //check if any modal is open
 		  {
 		    $('body').addClass('modal-open');//add class to body
@@ -44,6 +44,6 @@ function showForgotPasswordModal(){
 		  }
 		});
 	
-	$("#myModal7").modal("show");
+	$("#myModalAdminForgotPsw").modal("show");
 	
 }
