@@ -11,6 +11,7 @@
 /.project
 
 *.class
+servlet-api.jar
 
 # Package Files #
 *.war
