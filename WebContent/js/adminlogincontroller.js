@@ -52,19 +52,6 @@ function showAdminSignUpModal(){
 	
 }
 
-function hideAdminSignUpModal(){
-	$("#myModalAdminSignUp").modal("hide");
-	$("#myModalAdminSignUp").on('hidden.bs.modal', function (event) {
-		  if ($('.modal:visible').length) //check if any modal is open
-		  {
-		    $('body').addClass('modal-open');//add class to body
-		  }
-		});
-	$("#myModal3").modal("show");
-}
-
-
-
 function showAdminForgotPasswordModal(){
 	$("#myModal3").modal("hide");
 	$("#myModal3").on('hidden.bs.modal', function (event) {
@@ -76,5 +63,10 @@ function showAdminForgotPasswordModal(){
 	
 	$("#myModalAdminForgotPsw").modal("show");
 	
+}
+
+function adminforgotPassword(){
+	
+	alert("Password Reset");
 }
 
