@@ -20,11 +20,10 @@ function adminloginUser(){
         			}
         			sessionStorage.setItem(i, field);
         		 });;
-        		 $("#myModal").modal("hide");
-        		 $("#logindiv").hide();
-        		 $("#userdiv").show();
-        		 $("#livediv").show();
-        		 $("#userlabel").text("Welcome, " + sessionStorage.getItem("firstName"));
+        		 $("#myModal3").modal("hide");
+        		 $("#adminlogindiv").hide();
+        		 $("#adminUserdiv").show();
+        		 $("#adminUserlabel").text("Welcome, " + sessionStorage.getItem("firstName"));
         	}
         	else{
         		$("#errordetails").text("Not a Valid User, please enter proper username and password !!!").delay(3000).fadeOut();

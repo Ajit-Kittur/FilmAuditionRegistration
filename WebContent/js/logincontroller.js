@@ -55,6 +55,7 @@ function loginUser(event){
             		 $("#logindiv").hide();
             		 $("#userdiv").show();
             		 $("#livediv").show();
+            		 $("#logoutdiv").show();
             		 $("#userlabel").text("Welcome, " + sessionStorage.getItem("firstName"));
             	}
             	else{
@@ -115,4 +116,16 @@ function loadforgotpassword(event){
 		$("#errordetails_signup").text("Password and confirm password fields are different...!").delay(3000).fadeOut();
 	}   
 	event.preventDefault();
+}
+
+function logoutUser(){ 
+ alert("Logged out");	
+
+ $.ajax({
+ 	url: "actorservlet?action=logout",
+ 	method: "POST",
+ 	data:  $('#logout_form').serialize(),
+ 	dataType: 'JSON',
+
+});
 }
