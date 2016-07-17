@@ -99,6 +99,7 @@ function loadforgotpassword(event){
            				$('body').addClass('modal-open');//add class to body
            			}
            		});
+           		$("#myModal").modal("show");
             }
             else{
             		alert('This email id is already registered')

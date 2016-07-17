@@ -115,13 +115,14 @@ public class AdminDaoImpl implements AdminDao{
 
 	@Override
 	public boolean forgotPassword(String emailId, Long contactNo) {
-		Entity entityAnno=Admin.class.getAnnotation(Entity.class);
-		System.out.println(entityAnno.name());
 		EntityManager entitymanager=entityManagerFactory.createEntityManager();
-		Query query=entitymanager.createQuery("Select u.loginStatus from Admin u where u.contactNo=:contactNo and u.emailId=:emailId");
+		Query query=entitymanager.createQuery("Select u.contactNo from Admin u where u.contactNo=:contactNo and u.emailId=:emailId");
 		query.setParameter("contactNo", contactNo);
 		query.setParameter("emailId", emailId);
-		return (boolean) query.getSingleResult();
+		List<String>list= query.getResultList(); 
+		if(list.isEmpty())
+			return false;
+		return true;
 	}
 
 }

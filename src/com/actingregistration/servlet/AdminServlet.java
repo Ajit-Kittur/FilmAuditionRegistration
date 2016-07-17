@@ -75,7 +75,7 @@ public class AdminServlet extends HttpServlet {
 			try {
 				Gson gson=new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
 				Map<String, Boolean> value=new LinkedHashMap<String, Boolean>();
-				value.put("check",adminService.forgotPassword(request.getParameter("emailId"), request.getParameter("forgot_psw"), Long.parseLong(request.getParameter("contactNo"))));
+				value.put("check",adminService.forgotPassword(request.getParameter("emailId"), request.getParameter("admin_frgt_pwd"), Long.parseLong(request.getParameter("contactNo"))));
 				String userJson=gson.toJson(value);
 				System.out.println(userJson);
 				printWriter.write(userJson);

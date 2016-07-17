@@ -18,12 +18,13 @@ function adminloginUser(){
         			if(i=="adminId" || i=="loginStatus"){
         				return true;
         			}
-        			sessionStorage.setItem(i, field);
+        			//sessionStorage.setItem(i, field);
+        			alert(i)
         		 });;
-        		 $("#myModal").modal("hide");
-        		 $("#logindiv").hide();
-        		 $("#userdiv").show();
-        		 $("#livediv").show();
+        		 $("#myModal3").modal("hide");
+        		 //$("#logindiv").hide();
+        		 //$("#userdiv").show();
+        		 //$("#livediv").show();
         		 $("#userlabel").text("Welcome, " + sessionStorage.getItem("firstName"));
         	}
         	else{
@@ -67,6 +68,33 @@ function showAdminForgotPasswordModal(){
 
 function adminforgotPassword(){
 	
-	alert("Password Reset");
+	if($("#admin_frgt_pwd").val()==$("#admin_cnf_frgt_pwd").val()){
+		alert($('#admin_frgt_form').serialize());
+		$.ajax({
+	    	url: "adminservlet?action=loginforgot",
+	    	method: "POST",
+	    	data:  $('#admin_frgt_form').serialize(),
+	    	dataType: 'JSON',
+	        success: function(data) {
+	        	if(data.check){
+	        		alert("hello")
+	          		$("#myModalAdminForgotPsw").modal("hide");
+	           		$("#myModal3").modal("show");
+	            }
+	            else{
+	            		alert('This email id is already registered')
+	            		$("#admin_errordetails").text("This email id or contact number is not registered").delay(3000).fadeOut();
+	            }
+	        },
+	    	error: function(data) {
+	    		alert(data)
+	    		$("#admin_errordetails").text("Not a Valid User, please enter proper username and password !!!").delay(10000).fadeOut();
+	        }
+	      });
+		}else{
+			alert('not correct')
+			$("#admin_errordetails").text("Password and confirm password fields are different...!").delay(3000).fadeOut();
+		}   
+		event.preventDefault();
 }
 

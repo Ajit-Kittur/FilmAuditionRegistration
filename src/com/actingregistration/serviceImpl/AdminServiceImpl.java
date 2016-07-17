@@ -56,6 +56,8 @@ public class AdminServiceImpl implements AdminService{
 	@Override
 	public Boolean forgotPassword(String emailId, String password, Long contactNo)
 			throws ClassNotFoundException, SQLException, Exception {
+		System.out.println(emailId);
+		System.out.println(password);
 		if(adminDao.forgotPassword(emailId, contactNo)){
 			admin=adminDao.getAdminByemailId(emailId);
 			admin.setPassword(EncryptDecryptData.encrypt(password));
