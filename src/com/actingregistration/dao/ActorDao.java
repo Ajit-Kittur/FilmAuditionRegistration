@@ -1,6 +1,7 @@
 package com.actingregistration.dao;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import com.actingregistration.entities.Actor;
 
@@ -13,4 +14,5 @@ public interface ActorDao {
 	public Actor getActorByemailId(String emailId) throws ClassNotFoundException, SQLException;
 	public boolean forLoginCheck(String emailId, String password) throws ClassNotFoundException, SQLException;
 	public boolean forgotPassword(String emailId, Long contactNo);
+	public List<Actor> getAllRegisteredUsers();
 }

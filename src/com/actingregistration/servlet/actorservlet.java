@@ -3,6 +3,7 @@ package com.actingregistration.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -84,6 +85,16 @@ public class actorservlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			
+		}
+		else if(action.equals("getAllUsers")){
+			try{
+				Gson gson=new Gson();
+				List<Actor> actorsList=actorService.getAllActors();
+				System.out.println(gson.toJson(actorsList));
+				printWriter.write(gson.toJson(actorsList));
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 

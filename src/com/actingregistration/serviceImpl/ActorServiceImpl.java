@@ -1,6 +1,7 @@
 package com.actingregistration.serviceImpl;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import com.actingregistration.dao.ActorDao;
 import com.actingregistration.daoImpl.ActorDaoImpl;
@@ -65,5 +66,10 @@ public class ActorServiceImpl implements ActorService{
 			return false;
 		}
 	}
-
+	
+	@Override
+	public List<Actor> getAllActors(){
+		return actorDao.getAllRegisteredUsers();
+	}
+ 
 }

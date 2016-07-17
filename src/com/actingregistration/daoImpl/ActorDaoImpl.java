@@ -125,4 +125,15 @@ public class ActorDaoImpl implements ActorDao{
 		return (boolean) query.getSingleResult();
 	}
 
+	@Override
+	public List<Actor> getAllRegisteredUsers() {
+		Entity entityAnno=Actor.class.getAnnotation(Entity.class);
+		System.out.println(entityAnno.name());
+		EntityManager entitymanager=entityManagerFactory.createEntityManager();
+		Query query=entitymanager.createQuery("From Actor");
+		List<Actor> actorlist= query.getResultList(); 
+		if(actorlist.isEmpty())
+			return null;
+		return actorlist;
+	}
 }

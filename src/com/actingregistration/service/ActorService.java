@@ -1,6 +1,7 @@
 package com.actingregistration.service;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import com.actingregistration.entities.Actor;
 
@@ -9,4 +10,5 @@ public interface ActorService {
 	public Actor actorLogin(String emailId, String password) throws ClassNotFoundException, SQLException, Exception;
 	public Actor getActor(String emailId) throws ClassNotFoundException, SQLException;
 	public Boolean forgotPassword(String emailId, String password, Long contactNo) throws ClassNotFoundException, SQLException, Exception;
+	public List<Actor> getAllActors();
 }

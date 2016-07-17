@@ -217,6 +217,31 @@ footer {
 			$("#admintablist").load("html/adminHomePage.html");
 			$("#adminSignUpModalIndex").load("adminsignupmodal.html");
 			$("#adminForgotPasswordModal").load("adminForgotPasswordModal.html");
+			$('#userList_table tbody').append('<tr class="child"><td>blahblah</td></tr>');
+			$.ajax({
+		    	url: "actorservlet?action=getAllUsers",
+		    	method: "POST",
+		        success: function(data) {
+		        	if(data != null){
+		        		var actorsList = $.parseJSON(data)
+						$.each(actorsList, function(index, car) {
+							$('#userList_table tr:last').after('<tr>'
+							        +'<td>"1"</td>'
+							        +'<td>"Anna"</td>'
+							        +'<td>"Pitt"</td>'
+							        +'<td>"example@gmail.com"</td>'
+							        +'<td>"9900099000"</td>'
+							      +'</tr>');
+						})
+		        	}
+		        	else{
+		        		$("#errordetails").text("Not a Valid User, please enter proper username and password !!!").delay(3000).fadeOut();
+		        	}
+		        },
+		    	error: function(data) {
+		    		$("#errordetails").text("Not a Valid User, please enter proper username and password !!!").delay(10000).fadeOut();
+		        }
+		      });
 	});
 </script>
 
